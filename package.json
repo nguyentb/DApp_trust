@@ -1,0 +1,8 @@
+{
+  "name": "dapp-trust",
+  "version": "0.0.1",
+  "engines": {
+    "node": "14.2.x",
+    "npm": "6.14.x"
+  }
+}
