@@ -11,7 +11,7 @@ contract TestIpfsCoin {
 
     uint expected = 10000;
 
-    Assert.equal(ipfs.getBalance(tx.origin), expected, "Owner should have 10000 IpfsCoin initially");
+    Assert.equal(ipfs.getBalance(msg.sender), expected, "Owner should have 10000 IpfsCoin initially");
   }
 
   function testInitialBalanceWithNewIpfsCoin() public {
@@ -19,7 +19,7 @@ contract TestIpfsCoin {
 
     uint expected = 10000;
 
-    Assert.equal(ipfs.getBalance(tx.origin), expected, "Owner should have 10000 IpfsCoin initially");
+    Assert.equal(ipfs.getBalance(msg.sender), expected, "Owner should have 10000 IpfsCoin initially");
   }
 
 }
