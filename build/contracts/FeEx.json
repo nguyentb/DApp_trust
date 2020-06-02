@@ -1,115 +1,26 @@
 {
-  "contractName": "IpfsCoin",
+  "contractName": "FeEx",
   "abi": [
     {
-      "inputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "_from",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "_to",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "_value",
-          "type": "uint256"
-        }
-      ],
-      "name": "Transfer",
-      "type": "event"
-    },
-    {
       "constant": false,
       "inputs": [
         {
           "internalType": "address",
-          "name": "receiver",
+          "name": "trustor",
           "type": "address"
         },
         {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "sendCoin",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "sufficient",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
           "internalType": "address",
-          "name": "addr",
+          "name": "trustee",
           "type": "address"
-        }
-      ],
-      "name": "getBalanceInEth",
-      "outputs": [
+        },
         {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
+          "internalType": "bytes32",
+          "name": "transID",
+          "type": "bytes32"
         }
       ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "addr",
-          "type": "address"
-        }
-      ],
-      "name": "getBalance",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_feExAddr",
-          "type": "address"
-        }
-      ],
-      "name": "setFeExAddr",
+      "name": "setFeExInfo",
       "outputs": [
         {
           "internalType": "bool",
@@ -122,11 +33,11 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"}],\"name\":\"getBalanceInEth\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"sendCoin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"sufficient\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_feExAddr\",\"type\":\"address\"}],\"name\":\"setFeExAddr\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/nguyentb/workspace/Blockchain/Ethereum/DApp_trust/contracts/IpfsCoin.sol\":\"IpfsCoin\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/nguyentb/workspace/Blockchain/Ethereum/DApp_trust/contracts/ConvertLib.sol\":{\"keccak256\":\"0xd4a38690944b1a39efacec2a9e609ac8c40af95df61bc01092bfc801784f2a36\",\"urls\":[\"bzz-raw://54414e44874192e0911e9ebca92ef7d9dc5ce40f5e2434f6eb9e197e8c6a4ac3\",\"dweb:/ipfs/QmbdUKEWnZQEF4uxHc58ugjPECct2SCHnHVGEdw8g2Ba4B\"]},\"/home/nguyentb/workspace/Blockchain/Ethereum/DApp_trust/contracts/IpfsCoin.sol\":{\"keccak256\":\"0x24865627d016202b410a514ecae27c1c832ca0d253c05f86dbc95a79fcd5015e\",\"urls\":[\"bzz-raw://6eb9be4d62f832d1b38723dea7aa026eba08bbe60df5266da804dc213922d0ab\",\"dweb:/ipfs/QmQujEMSsraTzbmrDv9uNqo2R4x45RjiGmuazFjC2msASG\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50612710600160003273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555073b6fb8d2ada0df10277cce382f2d19236d08f26bc6000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506105ae806100ba6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806356219928146100515780637bd703e8146100ad57806390b98a1114610105578063f8b2cb4f1461016b575b600080fd5b6100936004803603602081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101c3565b604051808215151515815260200191505060405180910390f35b6100ef600480360360208110156100c357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061020e565b6040518082815260200191505060405180910390f35b6101516004803603604081101561011b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506102b2565b604051808215151515815260200191505060405180910390f35b6101ad6004803603602081101561018157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610530565b6040518082815260200191505060405180910390f35b6000816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060019050919050565b600073__ConvertLib____________________________6396e4ee3d61023384610530565b60026040518363ffffffff1660e01b8152600401808381526020018281526020019250505060206040518083038186803b15801561027057600080fd5b505af4158015610284573d6000803e3d6000fd5b505050506040513d602081101561029a57600080fd5b81019080805190602001909291905050509050919050565b600081600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610304576000905061052a565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a360008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690508073ffffffffffffffffffffffffffffffffffffffff166356881796338660014303406040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050602060405180830381600087803b1580156104e857600080fd5b505af11580156104fc573d6000803e3d6000fd5b505050506040513d602081101561051257600080fd5b81019080805190602001909291905050505060019150505b92915050565b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905091905056fea265627a7a72315820407bd8eeaec5adc0d8feefc49a1bd601931602b755f84d0e29b94db0d22aae8264736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806356219928146100515780637bd703e8146100ad57806390b98a1114610105578063f8b2cb4f1461016b575b600080fd5b6100936004803603602081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101c3565b604051808215151515815260200191505060405180910390f35b6100ef600480360360208110156100c357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061020e565b6040518082815260200191505060405180910390f35b6101516004803603604081101561011b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506102b2565b604051808215151515815260200191505060405180910390f35b6101ad6004803603602081101561018157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610530565b6040518082815260200191505060405180910390f35b6000816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060019050919050565b600073__ConvertLib____________________________6396e4ee3d61023384610530565b60026040518363ffffffff1660e01b8152600401808381526020018281526020019250505060206040518083038186803b15801561027057600080fd5b505af4158015610284573d6000803e3d6000fd5b505050506040513d602081101561029a57600080fd5b81019080805190602001909291905050509050919050565b600081600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610304576000905061052a565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a360008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690508073ffffffffffffffffffffffffffffffffffffffff166356881796338660014303406040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050602060405180830381600087803b1580156104e857600080fd5b505af11580156104fc573d6000803e3d6000fd5b505050506040513d602081101561051257600080fd5b81019080805190602001909291905050505060019150505b92915050565b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905091905056fea265627a7a72315820407bd8eeaec5adc0d8feefc49a1bd601931602b755f84d0e29b94db0d22aae8264736f6c63430005100032",
-  "sourceMap": "63:1081:2:-;;;218:113;8:9:-1;5:2;;;30:1;27;20:12;5:2;218:113:2;265:5;243:8;:19;252:9;243:19;;;;;;;;;;;;;;;:27;;;;285:42;274:8;;:53;;;;;;;;;;;;;;;;;;63:1081;;;;;;",
-  "deployedSourceMap": "63:1081:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;63:1081:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1039:103;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1039:103:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;783:117;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;783:117:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;334:446;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;334:446:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;903:89;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;903:89:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1039:103;1094:4;1114:9;1103:8;;:20;;;;;;;;;;;;;;;;;;1134:4;1127:11;;1039:103;;;:::o;783:117::-;842:4;858:10;:18;877:16;888:4;877:10;:16::i;:::-;894:1;858:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;858:38:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;858:38:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;858:38:2;;;;;;;;;;;;;;;;851:45;;783:117;;;:::o;334:446::-;398:15;446:6;423:8;:20;432:10;423:20;;;;;;;;;;;;;;;;:29;419:47;;;461:5;454:12;;;;419:47;494:6;470:8;:20;479:10;470:20;;;;;;;;;;;;;;;;:30;;;;;;;;;;;526:6;504:8;:18;513:8;504:18;;;;;;;;;;;;;;;;:28;;;;;;;;;;;562:8;541:38;;550:10;541:38;;;572:6;541:38;;;;;;;;;;;;;;;;;;658:12;678:8;;;;;;;;;;;658:29;;691:7;:19;;;711:10;723:8;758:1;743:12;:16;733:27;691:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;691:70:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;691:70:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;691:70:2;;;;;;;;;;;;;;;;;772:4;765:11;;;334:446;;;;;:::o;903:89::-;957:4;974:8;:14;983:4;974:14;;;;;;;;;;;;;;;;967:21;;903:89;;;:::o",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"trustor\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"trustee\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"transID\",\"type\":\"bytes32\"}],\"name\":\"setFeExInfo\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/nguyentb/workspace/Blockchain/Ethereum/DApp_trust/contracts/IpfsCoin.sol\":\"FeEx\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/nguyentb/workspace/Blockchain/Ethereum/DApp_trust/contracts/ConvertLib.sol\":{\"keccak256\":\"0xd4a38690944b1a39efacec2a9e609ac8c40af95df61bc01092bfc801784f2a36\",\"urls\":[\"bzz-raw://54414e44874192e0911e9ebca92ef7d9dc5ce40f5e2434f6eb9e197e8c6a4ac3\",\"dweb:/ipfs/QmbdUKEWnZQEF4uxHc58ugjPECct2SCHnHVGEdw8g2Ba4B\"]},\"/home/nguyentb/workspace/Blockchain/Ethereum/DApp_trust/contracts/IpfsCoin.sol\":{\"keccak256\":\"0x24865627d016202b410a514ecae27c1c832ca0d253c05f86dbc95a79fcd5015e\",\"urls\":[\"bzz-raw://6eb9be4d62f832d1b38723dea7aa026eba08bbe60df5266da804dc213922d0ab\",\"dweb:/ipfs/QmQujEMSsraTzbmrDv9uNqo2R4x45RjiGmuazFjC2msASG\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
   "source": "pragma solidity >=0.4.25 <0.7.0;\n\nimport \"./ConvertLib.sol\";\n\n\ncontract IpfsCoin {\n\taddress feExAddr;\n\tmapping (address => uint) balances;\n\tevent Transfer(address indexed _from, address indexed _to, uint256 _value);\n\n\tconstructor() public {\n\t\tbalances[tx.origin] = 10000;\n\t\tfeExAddr = 0xb6FB8D2adA0df10277cCe382F2d19236d08F26Bc;\n\t}\n\n\tfunction sendCoin(address receiver, uint amount) public returns(bool sufficient) {\n\t\tif (balances[msg.sender] < amount) return false;\n\t\tbalances[msg.sender] -= amount;\n\t\tbalances[receiver] += amount;\n\t\temit Transfer(msg.sender, receiver, amount);\n\n\t\t//call the FeEx smartcontract to update the permission to give feedback\n\t\tFeEx feExIns = FeEx(feExAddr);\n\t\tfeExIns.setFeExInfo(msg.sender, receiver, blockhash(block.number - 1));\n\t\treturn true;\n\t}\n\n\tfunction getBalanceInEth(address addr) public view returns(uint){\n\t\treturn ConvertLib.convert(getBalance(addr),2);\n\t}\n\n\tfunction getBalance(address addr) public view returns(uint) {\n\t\treturn balances[addr];\n\t}\n\n\t//for setting up the FeEx contract address\n\tfunction setFeExAddr(address _feExAddr) public returns(bool){\n\t\tfeExAddr = _feExAddr;\n\t\treturn true;\n\t}\n}\n\n//call the FeEx smart contract\ninterface FeEx {\n\tfunction setFeExInfo(address trustor, address trustee, bytes32 transID) external returns(bool);\n}",
   "sourcePath": "/home/nguyentb/workspace/Blockchain/Ethereum/DApp_trust/contracts/IpfsCoin.sol",
   "ast": {
@@ -3905,7 +3816,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-06-02T00:28:57.797Z",
+  "updatedAt": "2020-06-02T00:28:57.796Z",
   "devdoc": {
     "methods": {}
   },
