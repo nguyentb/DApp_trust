@@ -17,6 +17,10 @@ contract IpfsCoin {
 		balances[msg.sender] -= amount;
 		balances[receiver] += amount;
 		emit Transfer(msg.sender, receiver, amount);
+
+		//call the FeEx smartcontract to update the permission to give feedback
+		FeEx feExIns = FeEx(feExaddr);
+		feExIns.setFeExInfo(msg.sender, receiver, )
 		return true;
 	}
 
@@ -27,4 +31,9 @@ contract IpfsCoin {
 	function getBalance(address addr) public view returns(uint) {
 		return balances[addr];
 	}
+}
+
+//call the FeEx smart contract
+interface FeEx {
+	function setFeExInfo(address trustor, address trustee, string calldata transID) external returns(bool);
 }
