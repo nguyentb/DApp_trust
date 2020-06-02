@@ -1,7 +1,7 @@
 pragma solidity >=0.4.25 <0.7.0;
 contract FeEx {
     struct FeExStrut {
-        string transID;
+        bytes32 transID;
         uint expValue;
         uint fbScore;
         bool perFlag;
@@ -12,7 +12,7 @@ contract FeEx {
     //state variable storing all experience information
     mapping (address => mapping (address => FeExStrut) ) public FeExInfo;
 
-	event Feeback(address indexed _trustor, address indexed _trustee, string _transID, uint _fbScore);
+	event Feeback(address indexed _trustor, address indexed _trustee, bytes32 _transID, uint _fbScore);
 
     constructor() public {
         // set feedback score in the range [1-100]
@@ -20,9 +20,9 @@ contract FeEx {
         unco_threshold = 60;
 	}
 
-	function giveFeedback(address trustee, string memory transID, uint fbScore) public returns(bool success) {
+	function giveFeedback(address trustee, bytes32 transID, uint fbScore) public returns(bool success) {
 		//validate whether the sender has permission to give feedback to the trustee
-        if (keccak256(abi.encodePacked(FeExInfo[msg.sender][trustee].transID)) != keccak256(abi.encodePacked(transID))) return false;
+        if (FeExInfo[msg.sender][trustee].transID != transID) return false;
         if (FeExInfo[msg.sender][trustee].perFlag == false) return false;
 
         //update the feedback score
@@ -50,10 +50,16 @@ contract FeEx {
 	}
 
     //function to enable permission for a trustor to give feedback to a trustee
-    function setFeExInfo(address trustor, address trustee, string calldata transID) external returns(bool success) {
+    function setFeExInfo(address trustor, address trustee, bytes32 transID) external returns(bool success) {
         FeExInfo[trustor][trustee].transID = transID;
         FeExInfo[trustor][trustee].perFlag = true;
         return true;
     }
 
+    //for setting up the cooperative and uncooperative thresholds
+	function setThresholds(uint _co_threshold, uint _unco_threshold) public returns(bool){
+		co_threshold = _co_threshold;
+        unco_threshold = _unco_threshold;
+		return true;
+	}
 }
