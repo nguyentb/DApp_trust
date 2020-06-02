@@ -20,6 +20,7 @@ contract FeEx {
         unco_threshold = 60;
 	}
 
+    // this function is called when a user gives feedback to a IPFS storage node. The experience value between the two is then updated accordingly
 	function giveFeedback(address trustee, bytes32 transID, uint fbScore) public returns(bool success) {
 		//validate whether the sender has permission to give feedback to the trustee
         if (FeExInfo[msg.sender][trustee].transID != transID) return false;
